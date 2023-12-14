@@ -1,0 +1,53 @@
+*{
+    margin: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+.input-size{
+    margin: -5px;
+    width: 300px;
+    height: 30px;
+}
+.input-size__phon{
+    width: 80px;
+    height: 25px;
+}
+.box{
+    width: 400px;
+    height: 600px;
+    border-radius: 3%;
+    background-color: #d9f6b9;
+    border: 2px solid #d9f6b9;
+    margin: center;
+    padding: 20px;
+    text-align: center;
+
+    box-shadow: 8px 8px 0px 1px rgba(154, 197, 137, 0.865), 
+    12px 12px 0px 1px rgb(232, 208, 46), 
+    18px 18px 0px 1px rgb(86, 117, 96),
+    22px 22px 0px 1px rgb(226, 103, 103);
+}
+.button{
+    width: 150px;
+    height: 20px;
+    float: right;
+    margin-right: 0px;
+    padding-right: center;
+    font-size: 12px;
+}
+
+.send{
+    text-align: right;
+    margin-right: 25px;
+    font-size: 12px;
+    box-sizing: 90px;
+}
+
+.phon{
+    width: auto;
+}
+
+.ul{
+    list-style: none;
+}
