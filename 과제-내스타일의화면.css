@@ -1,0 +1,105 @@
+*{
+    background-color: rgb(198, 180, 215);
+    font-family:'Preahvihear', sans-serif;
+    overflow: hidden;
+}
+
+.leftbox{
+    
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 10px;
+    border-top-left-radius: 8%;
+    border-bottom-left-radius: 8%;
+    background-color: rgb(56, 54, 54);
+    color:aliceblue;
+}
+.rightbox{
+
+    position: absolute;
+    margin-top: 18px;
+    padding-left: 30px;
+    left: 400px;
+    top: 0px;
+    width: 1200px;
+    height: 500px;
+    border-top-right-radius: 8%;
+    border-bottom-right-radius: 8%;
+    background-color: burlywood;
+    color: black;
+    text-align: left;
+}
+
+.fa-solid{
+    background-color: initial;
+    font-size: 50px;
+    position:relative;
+    top: 30px;
+}
+.fun{
+    background-color: initial;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    top:40px;
+    position:relative;   
+}
+.enjoy{
+    background-color: initial;
+    font-size: 20px;
+    top: 160px;
+    left:100px;
+    position: absolute;
+}
+.fa-gamepad{
+    font-size: 30px;
+    top: 80px;
+    left: -10px;
+    color:steelblue;
+}
+.fa-music{
+    font-size: 30px;
+    top: 110px;
+    left: -10px;
+    color:steelblue;
+}
+.fa-film{
+    font-size: 30px;
+    top: 140px;
+    left: -10px;
+    color:steelblue;
+}
+
+/* right box */
+
+.nice{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    top:20px;
+    position: absolute;
+    background-color: initial;
+    color:56 54 54;
+}
+.OZ{
+    background-color: initial;
+    font-size: 20px;
+    top: 130px;
+    position: absolute;
+}
+.fa-face-grin-tongue-wink{
+    font-size: 30px;
+    top: 140px;
+    color:steelblue;
+}
+.fa-pencil{
+    font-size: 30px;
+    top: 160px;
+    color:steelblue;
+}
+.fa-mug-hot{
+    font-size: 30px;
+    top: 180px;
+    color:steelblue;
+}
