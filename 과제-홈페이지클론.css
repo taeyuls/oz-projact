@@ -1,0 +1,24 @@
+element.style {
+    --vh: 6.4px;
+}
+:root {
+    --vh: 1vh;
+    --banner-height: 0px;
+}
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+html {
+    -webkit-locale: "ko-KR";
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+:root {
+    view-transition-name: root;
+}
+
+html {
+    display: block;
+}
