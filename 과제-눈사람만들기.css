@@ -1,0 +1,132 @@
+*{
+    background-color: hotpink;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cap{
+    width: 60px;
+    height: 60px;
+    top:-300px;
+    right: 0px;
+    position: relative;
+    background-color: black;
+}
+.cap2{
+    width: 100px;
+    height: 30px;
+    top:-270px;
+    right: 80px;
+    position: relative;
+    background-color: black;
+}
+.head{
+    width: 100px;
+    height: 100px;
+    top:-205px;
+    right: 180px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    position: relative;
+}
+.ball{
+    width: 10px;
+    height: 10px;
+    top:30px;
+    right: 60px;
+    background-color: rgb(254, 0, 0);
+    border-radius: 100px;
+    position: absolute;
+}
+
+.ball2{
+    width: 10px;
+    height: 10px;
+    top:30px;
+    right: 30px;
+    background-color: rgb(254, 0, 0);
+    border-radius: 100px;
+    position: absolute;
+}
+
+.mouth{
+    width: 0px;
+    height: 0px;
+    top:40px;
+    right: 35px;
+    background-color: white;
+    border-top: 30px solid transparent; 
+    border-right: 30px solid red;
+    
+    position: absolute;
+    transform: rotate(45deg);
+}
+.body{
+    width: 120px;
+    height: 120px;
+    top:-95px;
+    right: 290px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    position: relative;
+}
+.botton{
+    width: 10px;
+    height: 10px;
+    top:350px;
+    right: 686px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 100px;
+    position: absolute;
+}
+.botton2{
+    width: 10px;
+    height: 10px;
+    top:40px;
+    right:55px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 100px;
+    position: absolute;
+}
+
+.botton3{
+    width: 10px;
+    height: 10px;
+    top:70px;
+    right: 55px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 100px;
+    position: absolute;
+}
+.foot{
+    width: 150px;
+    height: 150px;
+    top:35px;
+    right: 425px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    position: relative;
+}
+.left{
+    width: 100px;
+    height: 10px;
+    top:0px;
+    right: 105px;
+    position: absolute;
+    background-color: rgb(0, 255, 13);
+    transform: rotate(35deg);
+}
+
+.right{
+    width: 100px;
+    height: 10px;
+    top:0;
+    right: -85px;
+    position: absolute;
+    background-color: rgb(0, 255, 13);
+    transform: rotate(145deg);
+}
