@@ -1,0 +1,60 @@
+body, h1, p, div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    background:  linear-gradient(to top right, #301145, #5e5d5a); 
+}
+
+.hello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    padding: 10px;
+    color:#83ec5d;
+    background-color: rgb(55, 23, 48);
+    font-size: 20px;
+    font-weight: bolder;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: #83ec5d;
+    
+}
+@media screen and (max-width: 1700px){
+body{ 
+        background: linear-gradient(to top right, #7e2ab6, #897038);    
+}
+}
+
+@media screen and (max-width: 1400px){
+body{ 
+        background: linear-gradient(to top right, #55527d, #c0392b);    
+}
+}
+@media screen and (max-width: 1100px){
+body{ 
+        background: linear-gradient(to top right, #357990, #c0392b);    
+}
+}
+
+@media screen and (max-width: 800px){
+body{ 
+        background: linear-gradient(to top right, #4cd1a9, #c0392b);    
+}
+}
+
+@media screen and (max-width: 600px){
+    body{ 
+            background: linear-gradient(to top right, #8df353, #c0392b);    
+    }
+    }
