@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="JS-챌린지4-3.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OZ초격차 회원가입</title>
+</head>
+<body>
+    <header>      
+    </header>
+
+    <main>
+        <div class="box">
+            <h2><strong>OZ초격차 회원가입</strong></h2>
+            <form id="registrationForm">
+                <input class="input-size" autofocus type="text" id="email" name="email" placeholder="이메일을 입력하세요." required><br><br>
+                <input class="input-size" type="text" maxlength="4" id="name" name="name" placeholder="이름을 입력하세요." required><br><br>
+                <input class="input-size" type="password" id="password1" name="password1" placeholder="비밀번호를 입력하세요." required><br><br>
+                <input class="input-size" type="password" id="password2" name="password2" placeholder="비밀번호를 다시 입력하세요." required><br><br>
+                <input class="input-size__phon" size="3" maxlength="3" id="phone1" name="phone1" placeholder="010" required> -
+                <input class="input-size__phon" size="4" maxlength="4" id="phone2" name="phone2" placeholder="1234" required> -
+                <input class="input-size__phon" size="4" maxlength="4" id="phone3" name="phone3" placeholder="5678" required><br><br>
+                <select class="input-size" name="area" size="1">
+                    <option value="select" selected>-지역을 선택하세요-</option>
+                    <option value="seoul">서울</option>
+                    <option value="seoul">경기도</option>
+                    <option value="seoul">대전</option>
+                    <option value="seoul">대구</option>
+                    <option value="seoul">부산</option>
+                    <option value="seoul">광주</option>
+                    <option value="seoul">제주도</option>
+                    <option value="seoul">기타</option>
+                </select><br><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">남</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">여</label><br><br>
+                <input class="input-size" type="submit" value="가입하기">
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById("registrationForm");
+
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+
+            let email = form.email.value;
+            let name = form.name.value;
+            let password1 = form.password1.value;
+            let password2 = form.password2.value;
+            let phone = `${form.phone1.value}-${form.phone2.value}-${form.phone3.value}`;
+            let area = form.area.value;
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+
+            console.log(email, name, password1, password2, phone, area, gender);
+
+        
+        });
+    </script>
+</body>
+</html>
