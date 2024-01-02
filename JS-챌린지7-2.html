@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>별 모양 그리기</title>
+</head>
+<body>
+    <h1>별 모양 그리기</h1>
+    <h2>1번 별</h2>
+    <pre id="stairs"></pre>
+    <h2>2번 별</h2>
+    <pre id="rightHorn"></pre>
+    <h2>3번 별</h2>
+    <pre id="diamond"></pre>
+</body>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const stairs = document.getElementById('stairs');
+    const rightHorn = document.getElementById('rightHorn');
+    const diamond = document.getElementById('diamond');
+    const height = 5;
+
+    // 1번 별
+    let stairsPattern = '';
+    for (let i = 0; i < height; i++) {
+        stairsPattern += '*'.repeat(i + 1) + '\n';
+    }
+    stairs.textContent = stairsPattern;
+
+    // 2번 별
+    let rightHornPattern = '';
+    for (let i = 0; i < height; i++) {
+        rightHornPattern += '*'.repeat(i + 1) + '\n';
+    }
+    for(let i = height - 2; i >= 0; i--){
+        rightHornPattern += '*'.repeat(i + 1) + '\n'; 
+    }
+    rightHorn.textContent = rightHornPattern; 
+
+    // 3번 별
+    let diamondPattern = '';
+    for (let i = 0; i < height; i++) {
+        diamondPattern += ' '.repeat(height - i - 1) + '*'
+            .repeat(i * 2 + 1) + '\n';
+    }
+    for (let i = height - 2; i >= 0; i--) {
+        diamondPattern += ' '.repeat(height - i - 1) + '*'
+            .repeat(i * 2 + 1) + '\n';
+    }
+    diamond.textContent = diamondPattern;
+});
+</script>
+
+</script>
+</html>
