@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미스테리 숫자 맞추기</title>
+</head>
+<style>
+    *{
+        font-size: 30px;
+        background-color: darkslateblue;
+        color :antiquewhite;
+            }
+ 
+    body{
+   text-align: center;
+    }
+    input{
+        position: relative;
+        right: 100px;
+        color:black;
+        width: 350px;
+        height: 50px;
+        border-radius: 10px;
+        background-color:antiquewhite;
+    }
+    input:focus{
+        outline: none;
+    }
+    button{
+        position: absolute;
+        color: rgb(145, 200, 255);
+        right: 130px;
+        width: 200px;
+        height: 55px;
+        font-size: 30px;
+        cursor: pointer;
+        background-color: rgb(46, 61, 129);
+        border: 2px solid rgb(145, 200, 255);
+        border-radius: 10px;
+    }
+    
+    button:hover {
+        background-color: rgb(64, 101, 187);
+        color: antiquewhite;
+        font-size: 120%;
+        width: 200px;
+        height: 70px;
+        box-shadow:0px 20px 15px -10px rgb(78, 217, 245);
+        transform: translateY(-10px);
+                transform: translateY(-10px) scale(120%);
+    }
+    h1{
+        font-size: 60px;
+    }
+    .restartButton{
+        animation: both 3s ease-in-out infinite;
+    }
+</style>
+<body>
+    <div class="box">
+        <form>
+    <h1>Mystery Number 맞추기</h1>
+    <br />
+    <p>1부터 100사이의 숫자를 입력하세요!</p>
+    <input id="userGuess" type="number" placeholder="요기에 숫자를 입력해서 맞춰!">
+    <button type="button" onclick="checkGuess()" >뚜둥!</button>
+    <p id="hint"></p>
+
+            <button id="restartButton" style=display:none; onclick="restartGame(event)" >다시하기!</button>
+</div>
+    
+
+    <script>
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let guesses = 0;
+
+        function checkGuess() {
+            let userGuess = document.getElementById('userGuess').value;
+            userGuess = Number(userGuess);
+            guesses++;
+            
+            if (userGuess === secretNumber) {
+                alert(`👏🏽👏🏽👏🏽 ${guesses} 잘찍었어요! 정답!!`);
+                document.getElementById('restartButton').style.display = 'block';
+            } else if (userGuess < secretNumber) {
+                document.getElementById('hint').textContent = '힌트: 숫가 너무 작아요! 좀 더 높여주세요!';
+            } else {
+                document.getElementById('hint').textContent = '힌트: 숫가 높아요! 좀 줄여봐요!';
+            }
+            
+        }
+
+        function restartGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('userGuess').value = '';
+            document.getElementById('hint').textContent = '';
+            document.getElementById('restartButton').style.display = 'none';
+            guesses = 0;
+        }
+    </script>
+    
+</body>
+</html>
