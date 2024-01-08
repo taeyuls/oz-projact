@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>성적표</title>
+</head>
+<style>
+  table, td, th{
+    
+    width: 300px;
+    height: 5px;
+    padding: 0px;
+    border: double black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+</style>
+<body>
+  <h1>떡잎 유치원 멀리뛰기 결과</h1>
+  <table id="results">
+    <tr>
+      <th>이름</th>
+      <th>점수</th>
+    </tr>
+    <tr>
+      <td>짱구</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>맹구</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>철수</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>훈이</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>유리</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>수지</td>
+      <td>86</td>
+    </tr>
+  </tbody>
+
+  </table>
+  <h3>75점이 넘는 사람 :</h3>
+  <ul id="highScores"></ul>
+
+  <script>
+    // 점수 데이터 추출
+    const rows = document.querySelectorAll("#results tr:not(:first-child)");
+    const scores = Array.from(rows).map(row => {
+      return {
+        name: row.cells[0].textContent,
+        score: parseInt(row.cells[1].textContent)
+      };
+    });
+
+    // 75점 이상인 사람 추출 및 정렬
+    const highScorers = scores.filter(student => student.score > 75)
+                             .sort((a, b) => b.score - a.score);
+
+    // 결과 출력
+    const list = document.getElementById("highScores");
+    highScorers.forEach(student => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${student.name}: ${student.score}`;
+      list.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>
+
