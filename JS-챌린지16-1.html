@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가위바위보 게임</title>
+</head>
+<body>
+  <h1>가위바위보 게임</h1>
+  <p>가위, 바위, 보 중 하나를 입력하고 Enter를 누르세요.</p>
+  <input type="text" id="playerInput">
+  <p>당신의 선택: <span id="playerChoice"></span></p>
+  <p>컴퓨터의 선택: <span id="computerChoice"></span></p>
+  <p id="result"></p>
+
+  <script>
+    document.getElementById('playerInput').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        play(this.value);
+        this.value = ''; // Clear the input field
+      }
+    });
+
+    function play(playerSelection) {
+      const choices = ['가위', '바위', '보'];
+      const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+
+      document.getElementById('playerChoice').innerText = playerSelection;
+      document.getElementById('computerChoice').innerText = computerSelection;
+
+      document.getElementById('result').innerText = determineWinner(playerSelection, computerSelection);
+    }
+
+    function determineWinner(playerSelection, computerSelection) {
+      if(playerSelection === computerSelection) {
+        return '무승부!';
+      }
+
+      if(
+        (playerSelection === '바위' && computerSelection === '가위') ||
+        (playerSelection === '보' && computerSelection === '바위') ||
+        (playerSelection === '가위' && computerSelection === '보')
+      ) {
+        return '당신이 이겼습니다!';
+      }
+
+      return '컴퓨터가 이겼습니다!';
+    }
+  </script>
+</body>
+</html>

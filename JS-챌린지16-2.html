@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 멈춰</title>
+  <style>
+    .backgroundImg {
+      width: 100%;
+      height: 900px;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="imageContainer" class="backgroundImg"></div>
+  <button id="stopButton">멈춰</button>
+
+  <script>
+    const images = [
+      '/JS-과제/images/ghost.jpg',
+      '/JS-과제/images/hahaha.jpg',
+      '/JS-과제/images/batmen.jpg'
+    ];
+
+    let currentIndex = 0;
+    const imageContainer = document.getElementById('imageContainer');
+    let intervalId;
+
+    function changeImage() {
+      imageContainer.style.backgroundImage = `url(${images[currentIndex]})`;
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    intervalId = setInterval(changeImage, 500); // Change every 3 seconds
+
+    document.getElementById('stopButton').addEventListener('click', function() {
+      clearInterval(intervalId);
+    });
+  </script>
+</body>
+</html>

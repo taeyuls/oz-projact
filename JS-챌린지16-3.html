@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아이스크림 추가 및 나열</title>
+  <script>
+    let iceCreams = [];
+
+    function addIceCream() {
+      let flavor = prompt("추가할 아이스크림을 입력하세요:");
+      iceCreams.push(flavor);
+
+    }
+
+    function displayIceCreamList() {
+      let list = document.getElementById("iceCreamList");
+      list.innerHTML = ""; 
+      iceCreams.forEach(flavor => {
+        let listItem = document.createElement("H3",);
+        listItem.textContent = flavor;
+        list.appendChild(listItem);
+      });
+    }
+  </script>
+</head>
+<body>
+  <button onclick="addIceCream()">아이스크림 종류 추가</button>
+  <button onclick="displayIceCreamList()">입력한 아이스크림 목록 출력</button>
+  <h3>입력한 아이스크림 목록:</h3>
+  <h3 id="iceCreamList"></h3>
+</body>
+</html>
