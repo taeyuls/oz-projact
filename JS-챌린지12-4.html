@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스탑워치</title>
+</head>
+<body>
+
+    <h2>⏰스탑워치!!⏰</h2>
+
+    <div>
+        <div>
+            <span id="postTestMin">00</span>
+            <span>:</span>
+            <span id="postTestSec">00</span>
+            <span>.</span>
+            <span id="postTestMilesec">00</span>
+        </div>
+    </div>
+    <div>
+        <button type="button" id="testStartBtn">START</button>
+        <button type="button" id="testStopBtn">STOP</button>
+        <button type="button" id="testResetBtn">RESET</button>
+    </div>
+
+    <script>
+       let stTime = 0;
+       let endTime = 0;
+       let timerStart;
+       
+       let min;
+       let sec;
+       let milisec;
+
+       window.onload = function() {
+           let startBtn = document.getElementById('testStartBtn');
+           let stopBtn = document.getElementById('testStopBtn');
+           let resetBtn = document.getElementById('testResetBtn');
+
+           startBtn.addEventListener('click', function() {
+               if (!stTime) {
+                   stTime = Date.now();
+               } else {
+                   stTime += (Date.now() - endTime);
+               }
+
+               timerStart = setInterval(function() {
+                   let nowTime = new Date(Date.now() - stTime);
+                   min = addZero(nowTime.getMinutes());
+                   sec = addZero(nowTime.getSeconds());
+                   milisec = addZero(Math.floor(nowTime.getMilliseconds() / 10));
+
+                   document.getElementById('postTestMin').innerText = min;
+                   document.getElementById('postTestSec').innerText = sec;
+                   document.getElementById('postTestMilesec').innerText = milisec;
+               }, 10);
+           });
+
+           stopBtn.addEventListener('click', function() {
+               clearInterval(timerStart);
+               endTime = Date.now();
+           });
+
+           resetBtn.addEventListener('click', function() {
+               clearInterval(timerStart);
+               stTime = 0;
+               endTime = 0;
+               document.getElementById('postTestMin').innerText = "00";
+               document.getElementById('postTestSec').innerText = "00";
+               document.getElementById('postTestMilesec').innerText = "00";
+           });
+       }
+
+       function addZero(num) {
+           return num < 10 ? '0' + num : num;
+       }
+    </script>
+</body>
+</html>

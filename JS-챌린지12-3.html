@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>카운트다운</title>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+h3{
+    margin: 5px;
+}
+   .countdown{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
+    
+   }
+
+</style>
+</head>
+<body>
+    
+    <div id="countdown" class="countdown">
+        <h3>2025년 1월 1일 까지:</h3>
+
+            <h3 id="days"></h3>
+            <h3 id="hours"></h3>
+            <h3 id="minutes"></h3>
+            <h3 id="seconds"></h3>
+
+    </div>
+    
+    <script>
+
+const day = new Date('2019/5/16/18:30');
+
+console.log(day.toString());     // Thu May 16 2019 18:30:00 GMT+0900 (한국 표준시)
+console.log(day.toTimeString()); // 18:30:00 GMT+0900 (한국 표준시)
+document.write("현재시간:" + day)
+
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
+
+const currentYear = new Date().getFullYear();
+
+const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
+
+
+function updateCountdown() {
+    const currentTime = new Date();
+    const diff = newYearTime - currentTime;
+
+    const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+    const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+    const m = Math.floor(diff / 1000 / 60) % 60;
+    const s = Math.floor(diff / 1000) % 60;
+
+    days.innerHTML = d + "일";
+    hours.innerHTML = h < 10 ? '0' + h : h + "시";
+    minutes.innerHTML = m < 10 ? '0' + m : m + "분";
+    seconds.innerHTML = s < 10 ? '0' + s : s + "초 남았다.";
+}
+
+setInterval(updateCountdown, 1000)
+
+    </script>
+</body>
+</html>
