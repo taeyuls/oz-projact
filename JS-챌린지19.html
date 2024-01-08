@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" contenct="width=device-width, initial-scale=1.0">
+    <title>할일 목록</title>
+</head>
+<style>
+  #container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.app {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+#todo-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #eaeaea;
+    border-radius: 5px;
+}
+
+button {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+</style>
+<body>
+
+    <div id="container">
+        <div class="app">
+            <h1>TO DO LIST</h1>
+            <ul id="todo-list"></ul>
+            <form id="todo-form">
+                <input name="todo"
+                placeholder="TO DO..."
+                autocomplete="off"
+                >
+                <input type="submit" value="추가">
+            </form>
+        </div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('todo-form');
+    const todoList = document.getElementById('todo-list');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const todoText = form.elements.todo.value;
+        if (todoText === "") {
+            alert("할 일을 입력해주세요.");
+            return;
+        }
+
+        const newTodo = document.createElement('li');
+        newTodo.textContent = todoText;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = '삭제';
+        deleteButton.onclick = function () {
+            newTodo.remove();
+        };
+
+        newTodo.appendChild(deleteButton);
+        todoList.appendChild(newTodo);
+
+        form.reset();
+    });
+});
+
+
+    </script>
+</body>
+</html>
