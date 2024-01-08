@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 번호 추첨</title>
+  <style>
+    #lottoNumbers {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>2024년 1월 7일 로또 번호 추첨</h1>
+  <button id="drawButton">추첨</button>
+  <button id="resetButton">다시</button>
+  <div id="lottoNumbers"></div>
+
+  <script>
+    document.getElementById('drawButton').onclick = function() {
+      let numbers = [];
+      while(numbers.length < 6) {
+        let num = Math.floor(Math.random() * 45) + 1;
+        if(numbers.indexOf(num) === -1) numbers.push(num);
+      }
+      document.getElementById('lottoNumbers').innerText = '추첨된 번호: ' + numbers.join(', ');
+    };
+
+    document.getElementById('resetButton').onclick = function() {
+      document.getElementById('lottoNumbers').innerText = '';
+    };
+  </script>
+</body>
+</html>
