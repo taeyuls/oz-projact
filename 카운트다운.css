@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    color:darkslateblue;
+}
+
+font{
+    display: flex;
+}
+body{
+    background-image: url('/JS-과제/images/batmen.jpg');
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1{
+    color:black;
+    text-shadow: 1px 5px 10px rgb(151, 146, 181);
+    font-weight: bold;
+    font-size: 60px;
+    margin: -500px 0 20px;    
+}
+
+.countdown{
+    position: relative;
+    right: 10px;
+    display: flex;
+    transform: scale(1.5);
+}
+.time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    text-shadow: 1px 5px 10px rgb(105, 94, 177);
+}
+
+.time h2{
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1;
+    margin: 25px 0 5px;
+}
